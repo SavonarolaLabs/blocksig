@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Blockly Demo</title>
     <script src="node_modules/blockly/blockly.min.js"></script>
+    <script src="blocks.js"></script>
     <style>
       html, body {
         height: 100%;
@@ -11,21 +12,32 @@
         overflow: hidden;
       }
       #blocklyDiv {
-        height: 100%;
+        height: 70%;
         width: 100%;
+      }
+      #generatedCode {
+        width: 100%;
+        height: 20%;
+      }
+      #generateButton {
+        width: 100%;
+        height: 10%;
+        font-size: 16px;
       }
     </style>
   </head>
   <body>
+    <button id="generateButton">Generate Code</button>
     <div id="blocklyDiv"></div>
     <xml id="toolbox" style="display: none">
-      <block type="controls_if"></block>
-      <block type="logic_compare"></block>
-      <block type="math_number"></block>
-      <block type="math_arithmetic"></block>
-      <block type="text"></block>
-      <block type="text_print"></block>
+      <block type="public_key"></block>
+      <block type="public_key_threshold"></block>
+      <block type="and"></block>
+      <block type="or"></block>
+      <block type="timelock"></block>
+      <block type="threshold"></block>
     </xml>
+    <textarea id="generatedCode" readonly></textarea>
     <script src="main.js"></script>
   </body>
 </html>
